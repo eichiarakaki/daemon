@@ -1,1 +1,0 @@
-C:\Users\justa\Documents\data-collector\main.py,8,C:\Users\justa\Documents\data-collector\env

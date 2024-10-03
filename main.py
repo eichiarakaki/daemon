@@ -2,36 +2,40 @@ import schedule
 import time
 import subprocess
 import logging
-
+import json
 
 logging.basicConfig(filename='daemon.log', level=logging.INFO, format='%(asctime)s - %(message)s')
 
-
 def schedule_scripts():
-    with open("./scripts.txt", "r") as file:
-        scripts = file.readlines()
+    with open("./scripts.json", "r") as file:
+        data = json.load(file)
+        scripts = data["scripts"]
         print("Scripts loaded:", scripts)
 
     for script in scripts:
-        script = script.strip()
-        if script:
-            script_name, interval, env_name = script.split(",")
-            interval = int(interval.strip())
-            env_name = env_name.strip()
-            print(f"Scheduling {script_name} to run every {interval} hours in environment {env_name}")
-            schedule.every(interval).hours.do(lambda: run_script(script_name, env_name))
-            run_script(script_name, env_name)
+        try:
+            script_name = script['script_name']
+            interval = script['interval']
+            env_name = script['env_name']
+            script_args = script.get('script_args', "")
+            print(f"Scheduling {script_name} to run every {interval} hours in environment {env_name} with arguments {script_args}")
+            schedule.every(interval).hours.do(run_script, script_name, env_name, script_args)
+            run_script(script_name, env_name, script_args)
+        except KeyError as e:
+            print(f"Error in the script configuration: {script} - Missing key: {e}")
+            logging.error(f"Error in the script configuration: {script} - Missing key: {e}")
 
-
-def run_script(script_name, env_name):
-    print(f"Running script: {script_name} in environment: {env_name}")
+def run_script(script_name, env_name, script_args):
+    print(f"Running script: {script_name} in environment: {env_name} with arguments: {script_args}")
     try:
         if env_name.lower() == "none":
-            subprocess.run(["python", script_name], check=True)
+            command = ["python", script_name] + script_args.split()
         else:
-            activate_env = f"{env_name}\\Scripts\\activate.bat && python {script_name}"
-            process = subprocess.Popen(["cmd.exe", "/c", activate_env], shell=True)
-            process.communicate()
+            activate_env = f'{env_name}\\Scripts\\activate.bat && python {script_name} {script_args}'
+            command = ["cmd.exe", "/c", activate_env]
+
+        process = subprocess.Popen(command, shell=True)
+        process.communicate()
 
         message = f"Script {script_name} executed successfully."
         print(message)
@@ -40,7 +44,6 @@ def run_script(script_name, env_name):
         message = f"Script {script_name} execution failed: {e}"
         print(message)
         logging.error(message)
-
 
 if __name__ == "__main__":
     schedule_scripts()

@@ -1,3 +1,30 @@
-2024-10-02 23:18:12,547 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
-2024-10-03 07:18:20,777 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
-2024-10-03 08:41:56,837 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:15:27,264 - Error in the line: C:\Users\justa\Documents\data-collector\main.py,4,C:\Users\justa\Documents\data-collector\env - Wrong scripts.txt format.
+2024-10-03 20:15:27,264 - Error in the line: C:\Users\justa\Documents\historic_data\push.py,4,none,"C:\Users\justa\Documents\data-collector\","data updated" - No closing quotation
+2024-10-03 20:16:16,444 - Error in the line: C:\Users\justa\Documents\data-collector\main.py, 4, C:\Users\justa\Documents\data-collector\env - invalid literal for int() with base 10: '4,'
+2024-10-03 20:16:16,444 - Error in the line: C:\Users\justa\Documents\historic_data\push.py, 4, none, "C:\Users\justa\Documents\data-collector\" "data updated" - No closing quotation
+2024-10-03 20:16:56,144 - Error in the line: C:\Users\justa\Documents\data-collector\main.py,4,C:\Users\justa\Documents\data-collector\env - Wrong scripts.txt format.
+2024-10-03 20:16:56,144 - Error in the line: C:\Users\justa\Documents\historic_data\push.py,4,none,'C:\Users\justa\Documents\data-collector\' 'data updated' - Wrong scripts.txt format.
+2024-10-03 20:18:51,754 - Error in the line: C:\Users\justa\Documents\data-collector\main.py,4,C:\Users\justa\Documents\data-collector\env - Wrong scripts.txt format.
+2024-10-03 20:18:51,755 - Error in the line: C:\Users\justa\Documents\historic_data\push.py,4,none,'C:\Users\justa\Documents\data-collector\' 'data updated' - Wrong scripts.txt format.
+2024-10-03 20:19:23,794 - Error in the line: C:\Users\justa\Documents\data-collector\main.py, 4, C:\Users\justa\Documents\data-collector\env - invalid literal for int() with base 10: '4,'
+2024-10-03 20:19:23,794 - Error in the line: C:\Users\justa\Documents\historic_data\push.py, 4, none, "C:\Users\justa\Documents\data-collector\" "data updated" - No closing quotation
+2024-10-03 20:20:32,406 - Error in the line: C:\Users\justa\Documents\data-collector\main.py,4,C:\Users\justa\Documents\data-collector\env - Wrong scripts.txt format.
+2024-10-03 20:20:32,406 - Error in the line: C:\Users\justa\Documents\historic_data\push.py,4,none,"C:\Users\justa\Documents\data-collector\" "data updated" - No closing quotation
+2024-10-03 20:22:58,756 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:22:58,817 - Script C:\Users\justa\Documents\historic_data\push.py executed successfully.
+2024-10-03 20:25:06,398 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:25:06,456 - Script C:\Users\justa\Documents\historic_data\push.py executed successfully.
+2024-10-03 20:26:27,609 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:26:27,673 - Script C:\Users\justa\Documents\historic_data\push.py executed successfully.
+2024-10-03 20:29:04,499 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:29:04,562 - Script C:\Users\justa\Documents\historic_data\push.py executed successfully.
+2024-10-03 20:30:59,287 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:32:50,552 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:35:10,357 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:36:48,886 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:36:48,949 - Script C:\Users\justa\Documents\historic_data\push.py executed successfully.
+2024-10-03 20:39:25,223 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:39:25,285 - Script C:\Users\justa\Documents\historic_data\push.py executed successfully.
+2024-10-03 20:44:06,728 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
+2024-10-03 20:44:06,794 - Script C:\Users\justa\Documents\historic_data\push.py executed successfully.
+2024-10-03 20:49:20,245 - Script C:\Users\justa\Documents\data-collector\main.py executed successfully.
