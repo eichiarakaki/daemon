@@ -3,10 +3,11 @@ import time
 import subprocess
 import logging
 import json
+from notifier import Notificator
 
 logging.basicConfig(filename='daemon.log', level=logging.INFO, format='%(asctime)s - %(message)s')
 
-def schedule_scripts():
+def schedule_scripts(notificator):
     with open("./scripts.json", "r") as file:
         data = json.load(file)
         scripts = data["scripts"]
@@ -21,6 +22,7 @@ def schedule_scripts():
             print(f"Scheduling {script_name} to run every {interval} hours in environment {env_name} with arguments {script_args}")
             schedule.every(interval).hours.do(run_script, script_name, env_name, script_args)
             run_script(script_name, env_name, script_args)
+            notificator.notify(script_name, env_name, script_args)
         except KeyError as e:
             print(f"Error in the script configuration: {script} - Missing key: {e}")
             logging.error(f"Error in the script configuration: {script} - Missing key: {e}")
@@ -46,7 +48,8 @@ def run_script(script_name, env_name, script_args):
         logging.error(message)
 
 if __name__ == "__main__":
-    schedule_scripts()
+    notificator = Notificator()
+    schedule_scripts(notificator)
 
     while True:
         schedule.run_pending()
